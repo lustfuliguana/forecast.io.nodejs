@@ -1,0 +1,43 @@
+{
+	"version": "2.2",
+	
+	"mongo": {
+		"host": "127.0.0.1",
+		"port": 27017,
+		"database": "meteo_lypnyky"
+	},
+	
+	"currentWeatherSpider": {
+		"on": true,
+		"interval": 900000,
+		"event": "crawl"
+	},
+	
+	"wsServer": {
+		"addr": "0.0.0.0",
+		"port": 9509
+	},
+	
+	"source": {
+		"forecastio": {
+			"apiUrl": "https://api.forecast.io/forecast/",
+			"apiKey": "apikey",
+			"maxCallsCount": 950
+		}
+	},
+	
+	"points": {
+		"volovec": {
+			"id": "volovec",
+			"name": "Volovec",
+			"coords": "48.7106737,23.1849289",
+			"private": false
+		},
+		"mizhiria": {
+			"id": "mizhiria",
+			"name": "Mizhiria",
+			"coords": "48.523199,23.5066223",
+			"private": false
+		}
+	}
+}

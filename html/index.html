@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Meteo.lypnyky.com 2.2</title>
+		<link rel="stylesheet" href="css/styles.css" />
+	</head>
+	<body>
+		<div id="loading">Loading...</div>
+		<div id="weather" class="panel hidden">
+			<div>Updated at <span id="updated"></span></div>
+			<table>
+				<tr>
+					<th>Summary</th>
+					<td id="summary"></td>
+				</tr>
+				<tr>
+					<th>Temperature</th>
+					<td id="temp"></td>
+				</tr>
+				<tr>
+					<th>Dew point</th>
+					<td id="dew"></td>
+				</tr>
+				<tr>
+					<th>Pressure</th>
+					<td id="pressure"></td>
+				</tr>
+				<tr>
+					<th>Wind</th>
+					<td id="wind"></td>
+				</tr>
+				<tr>
+					<th>Wind bearing</th>
+					<td id="wind-bear"></td>
+				</tr>
+				<tr>
+					<th>Clouds</th>
+					<td id="clouds"></td>
+				</tr>
+				<tr>
+					<th>Precipitation</th>
+					<td id="precip"></td>
+				</tr>
+				<tr>
+					<th>Precip. probability</th>
+					<td id="precip-prob"></td>
+				</tr>
+				<tr>
+					<th>Humidity</th>
+					<td id="humid"></td>
+				</tr>
+				<tr>
+					<th>Forecast 24h</th>
+					<td id="forecast24"></td>
+				</tr>
+				<tr>
+					<th>Forecast 7d</th>
+					<td id="forecast7"></td>
+				</tr>
+			</table>
+		</div>
+		
+		<div style="margin-top: 15px;" class="panel hidden">
+			<span class="h48">
+				<input type="checkbox" class="chart-axis" data-key="temp" id="chdate" checked onchange="chart.draw();">
+				<label for="chdate">Temperature</label>
+			</span>
+			<span class="d7 hidden">
+				<input type="checkbox" class="chart-axis" data-key="tempmax" id="chtempmax" onchange="chart.draw();">
+				<label for="chtempmax">Temperature (max)</label>
+				<input type="checkbox" class="chart-axis" data-key="tempmin" id="chtempmin" onchange="chart.draw();">
+				<label for="chtempmin">Temperature (min)</label>
+			</span>
+			<input type="checkbox" class="chart-axis" data-key="press" id="chpress" checked onchange="chart.draw();">
+			<label for="chpress">Pressure</label>
+			<span class="d7 hidden">
+				<input type="checkbox" class="chart-axis" data-key="pintmax" id="chpintmax" onchange="chart.draw();">
+				<label for="chpintmax">Precip. intensity (max)</label>
+			</span>
+			<input type="checkbox" class="chart-axis" data-key="pint" id="chpint" onchange="chart.draw();">
+			<label for="chpint">Precip. intensity</label>
+			<input type="checkbox" class="chart-axis" data-key="pprob" id="chpprob" onchange="chart.draw();">
+			<label for="chpprob">Precip. probability</label>
+			<input type="checkbox" class="chart-axis" data-key="dew" id="chdew" onchange="chart.draw();">
+			<label for="chdew">Dew point</label>
+			<input type="checkbox" class="chart-axis" data-key="hum" id="chhum" onchange="chart.draw();">
+			<label for="chhum">Humidity</label>
+			<input type="checkbox" class="chart-axis" data-key="ws" id="chws" onchange="chart.draw();">
+			<label for="chws">Wind speed</label>
+			<input type="checkbox" class="chart-axis" data-key="wb" id="chwb" onchange="chart.draw();">
+			<label for="chwb">Wind bearing</label>
+			<input type="checkbox" class="chart-axis" data-key="cloud" id="chcloud" onchange="chart.draw();">
+			<label for="chcloud">Cloud cover</label>
+			<input type="checkbox" class="chart-axis" data-key="ozone" id="chozone" onchange="chart.draw();">
+			<label for="chozone">Ozone</label>
+			<input type="checkbox" class="chart-axis hidden" data-key="visibility" id="chvisibility" onchange="chart.draw();">
+			<label for="chvisibility" class="hidden">Visibility</label>
+		</div>
+		
+		<div id="charts" class="panel hidden"></div>
+		
+		<div class="panel hidden">
+			<input type="radio" name="forecastPeriod" value="48h" id="period48h" checked onchange="chart.set48hmode()">
+			<label for="period48h">Forecast 48h</label>
+			<input type="radio" name="forecastPeriod" value="7d" id="period7d" onchange="chart.set48hmode()">
+			<label for="period7d">Forecast 7d</label>
+		</div>
+		
+		<div id="points" class="panel hidden"></div>
+		
+		<script src="js/jquery-2.1.4.min.js"></script>
+		<script src="js/client.app.js"></script>
+		<script src="js/chart.js"></script>
+		<script src="js/highcharts.js"></script>
+		<script src="js/modules/exporting.js"></script>
+	</body>
+</html>

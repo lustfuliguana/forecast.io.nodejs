@@ -1,0 +1,11 @@
+.hidden {
+	display: none;
+}
+#weather table {
+	border: 1px #aaa solid;
+	text-align: left;
+}
+#weather table th,
+#weather table td {
+	border: 1px #aaa solid;
+}
